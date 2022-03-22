@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
+    <script src="script.js"></script>
+    <title>IMAGE EDITOR ROOM</title>
+</head>
+<body>
+    <section class="editor">
+     
+
+
+        <!--IMAGE CONTAINER -->
+
+        <h1>IMAGE EDITOR ROOM</h1>
+        <div class="outer_container">
+
+        <div class="container" id="view_image">
+            <input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display: none;">
+            <div id="view_box" class="inner_box"><div id="print"><img id="output_image"></div>
+            <p id="inner_text">Upload Image Here</p>
+             </div>        
+        </div>
+        
+        <span id="btn">
+        <label for="file" >
+            <span class="button"><span>Upload </span></span>
+        </label>
+        <span class="button" id="download_btn" onclick="printDiv('print')"><span><b>Download</b></span></span>
+        </span>
+        </div>
+         <!-- TOOL BOX-->
+         <div class="tool_box">
+
+             <div class="tool">
+                 <div class="dragger_box"><input type="range" min="0" max="10" value="1" step="0.1" id="blur_tool" oninput="set_blur()"></div>
+                 <span  class="glyphicon">&#xe064;</span>             
+                </div>
+                <div class="tool">
+                    <div class="dragger_box"><input type="range" min="50" max="200" value="1" step="2" id="contrast_tool" oninput="set_contrast()"></div>
+                    <span  class="fas">&#xf185;</span>             
+                   </div>
+                   <div class="tool">
+                    <div class="dragger_box"><input type="range" min="0" max="5" value="1" step="0.1" id="saturation_tool" oninput="set_saturation()"></div>
+                    <span  class="fas">&#xf769;</span>             
+                   </div>
+                   <div class="tool">
+                    <div class="dragger_box"><input type="range" min="10" max="100" value="1" step="2" id="opacity_tool" oninput="set_opacity()"></div>
+                    <span  class="fa">&#xf2dc;</span>             
+                   </div> 
+                   <div class="tool">
+                    <div class="dragger_box"><input type="range" min="10" max="300" value="50" step="1" id="brightness_tool" oninput="set_brightness()"></div>
+                    <span  class="fa">&#xf0d0;</span>             
+                   </div> 
+                   <div class="tool">
+                    <div class="dragger_box" id="last_dbox"><input type="range" min="0" max="100" value="1" step="2" id="grayscale_tool" oninput="set_grayscale()"></div>
+                    <span  class="glyphicon">&#xe105;</span>             
+                   </div>         
+       </div>
+    </section>  
+</body>
+
+</html>
